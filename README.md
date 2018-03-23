@@ -1,5 +1,4 @@
-
-![golang automata]![golang automata](https://user-images.githubusercontent.com/22448079/37840422-ea0d1ec2-2eb4-11e8-896c-e79e6e625499.png)
+![golang automata](https://user-images.githubusercontent.com/22448079/37840422-ea0d1ec2-2eb4-11e8-896c-e79e6e625499.png)
 
 # GoLang Automaton
 A regular expression engine build in GoLang
