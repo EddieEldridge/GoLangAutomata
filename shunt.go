@@ -4,9 +4,11 @@ import "fmt"
 
 func intopost(infix string) string {
 
+	// Empty array of Runes (https://godoc.org/golang.org/x/text/runes)
 	runeArray := []rune{}
 
-	return runeArray
+	// Return the array of Runes converted into a string
+	return string(runeArray)
 }
 
 func main() {
