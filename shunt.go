@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func shuntingYardAlgo(inputString string) string {
+func ShuntingYardAlgo(inputString string) string {
 
 	// Map to that we can map characters (e.g *(),.|) to integers
 	// We choose these numbers due to the fact that certain characters have precedence over others
