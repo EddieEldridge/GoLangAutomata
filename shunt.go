@@ -4,9 +4,9 @@ import "fmt"
 
 func intopost(infix string) string {
 
-	pofix := ""
+	runeArray := []rune{}
 
-	return pofix
+	return runeArray
 }
 
 func main() {
