@@ -3,5 +3,8 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Printf("hello, world\n")
+
+    // Print out Infix and Postfix
+    fmt.Println("Infix: ")
+    fmt.Println("Postfix: ")
 }
