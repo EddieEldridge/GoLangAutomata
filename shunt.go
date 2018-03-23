@@ -87,17 +87,17 @@ func main() {
 
 	// ab.c*.
 	fmt.Println("Infix: ", "a.b.c*")
-	fmt.Println("Postfix: ", shuntingYardAlgo("a.b.c*"))
+	fmt.Println("Postfix: ", ShuntingYardAlgo("a.b.c*"))
 
 	// (a.(b|d))*
 	fmt.Println("Infix: ", "(a.(b|d))*")
-	fmt.Println("Postfix: ", shuntingYardAlgo("(a.(b|d))*"))
+	fmt.Println("Postfix: ", ShuntingYardAlgo("(a.(b|d))*"))
 
 	// a.(b|d).c*
 	fmt.Println("Infix: ", "a.(b|d).c*")
-	fmt.Println("Postfix: ", shuntingYardAlgo("a.(b|d).c*"))
+	fmt.Println("Postfix: ", ShuntingYardAlgo("a.(b|d).c*"))
 
 	// a.(b.b)+.c
 	fmt.Println("Infix: ", "a.(b.b)+.c")
-	fmt.Println("Postfix: ", shuntingYardAlgo("a.(b.b)+.c"))
+	fmt.Println("Postfix: ", ShuntingYardAlgo("a.(b.b)+.c"))
 }
