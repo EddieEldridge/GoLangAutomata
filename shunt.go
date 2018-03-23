@@ -20,14 +20,29 @@ func Intopost(inputString string) string {
 
 		// Switch statement for our Shunting algorithm
 		switch {
+
+		// Character cases
 		case r == '(':
+			stack = append(stack, r)
 
 		case r == ')':
 
+			// While the last element of our stack is not '(')
+			for stack[len(stack)-1] != '(' {
+
+				// Append the last element of the stack to our runeArray
+				runeArray = append(runeArray, stack[len(stack)-1])
+
+				// Remove the last element from the stack
+				stack = stack[:len(stack)-1]
+			}
+
 		// If 'r' is not contained in our characterMap, a 0 will be returned
+		// When a number greater than 0 is returned (i.e 'r' is not contained in our characterMap, append our runeArray with 'r')
 		case characterMap[r] > 0:
 
 		default:
+			runeArray = append(runeArray, r)
 
 		}
 
