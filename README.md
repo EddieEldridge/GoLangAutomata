@@ -31,3 +31,5 @@ The program will be developed using the Go programming language, Visual Studio C
 https://en.wikipedia.org/wiki/Thompson%27s_construction (For help understanding the concepts that this project is based upon)
 
 http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html
+
+https://swtch.com/~rsc/regexp/regexp1.html 
