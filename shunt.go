@@ -1,7 +1,6 @@
 package main
 
-import "fmt"
-
+// Shunting-Yard Algorithm (https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
 func ShuntingYardAlgo(inputString string) string {
 
 	// Map to that we can map characters (e.g *(),.|) to integers
@@ -13,9 +12,6 @@ func ShuntingYardAlgo(inputString string) string {
 
 	// Empty array of runes to be used as the stack in our program
 	stack := []rune{}
-
-	// Shunting-Yard Algorithm
-	// https://en.wikipedia.org/wiki/Shunting-yard_algorithm
 
 	// For loop to loop over our input (inputString string)
 	// Using range in our loop on our string will cause it to be converted to an array of Runes
@@ -80,6 +76,8 @@ func ShuntingYardAlgo(inputString string) string {
 }
 
 // Main Function
+
+/*
 func main() {
 
 	// Print out Infix
@@ -101,3 +99,4 @@ func main() {
 	fmt.Println("Infix: ", "a.(b.b)+.c")
 	fmt.Println("Postfix: ", ShuntingYardAlgo("a.(b.b)+.c"))
 }
+*/
