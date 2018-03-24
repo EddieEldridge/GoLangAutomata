@@ -18,10 +18,14 @@ type nfaFragment struct {
 }
 
 // Function to change our postfix regular expression to an NFA(Non-finite automaton)
-func postRegxpToNFA(inputString string) {
+// Return a pointer to an NFA struct
+func postRegxpToNFA(inputString string) *nfaFragment {
 
+	// Create nfa stack
+	nfaStack := []*nfaFragment{}
 }
 
+// Main function
 func main() {
 
 	// Set our nfa fragment to be equal to whatever regular expression we send in to our postRegxpToNFA function
