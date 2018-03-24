@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Shunting-Yard Algorithm (https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
 func ShuntingYardAlgo(inputString string) string {
 
@@ -77,8 +79,7 @@ func ShuntingYardAlgo(inputString string) string {
 
 // Main Function
 
-/*
-func main() {
+func printResults() {
 
 	// Print out Infix
 	// Run the algorithm on our infix and print the result as Postfix:
@@ -99,4 +100,3 @@ func main() {
 	fmt.Println("Infix: ", "a.(b.b)+.c")
 	fmt.Println("Postfix: ", ShuntingYardAlgo("a.(b.b)+.c"))
 }
-*/
