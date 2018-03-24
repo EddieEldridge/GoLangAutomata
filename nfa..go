@@ -100,7 +100,7 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 			initial := state{symbol: r, edge1: &accept}
 
 			// Push to the stack
-			nfaStack = append(nfaStack, &nfaStack{initial: &initial, accept: &accept})
+			nfaStack = append(nfaStack, &nfaFragment{initial: &initial, accept: &accept})
 		}
 	}
 
