@@ -19,7 +19,7 @@ type nfaFragment struct {
 
 // Function to change our postfix regular expression to an NFA(Non-finite automaton)
 // Return a pointer to an NFA struct
-func postRegxpToNFA(inputString string) *nfaFragment {
+func postRegxpToNFA(inputString string) *nfaFragment{
 
 	// Create nfa stack
 	nfaStack := []*nfaFragment{}
@@ -31,6 +31,8 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 		switch r {
 
 			case '.':
+				
+				// Step 1: Remove 2 NFA fragments from the top of the stacks
 				// Get the top element of the stack
 				fragment2 := nfaStack[len(nfaStack)-1]
 
@@ -43,10 +45,36 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 				// Remove the top element off the stack
 				nfaStack = nfaStack[:len(nfaStack)-1]
 				
-				// Join the two fragments
+				// Step 2: Join the accept state of the first fragment to the initial state of the second fragment
 				fragment1.accept.edge1 = fragment2.initial
-		
+				
+				// Step 3: Add a new fragment to the nfaStrack, from step 2.
+				nfaStack = append(nfastack, &nfa{initial: fragment1.initial, accept: fragment2.accept})
+
 			case '|':
+
+				// Step 1: Remove 2 NFA fragments from the top of the stacks
+				// Get the top element of the stack
+				fragment2 := nfaStack[len(nfaStack)-1]
+
+				// Remove the top element off the stack
+				nfaStack = nfaStack[:len(nfaStack)-1]
+
+				// Get the top element of the stack
+				fragment1 := nfaStack[len(nfaStack)-1]
+
+				// Remove the top element off the stack
+				nfaStack = nfaStack[:len(nfaStack)-1]
+				
+				// Accept states
+				accept := state{}
+				initial := state{edge1: fragment1.initial, edge2: fragment2.initial}
+
+				fragment1.accept.edge1 = &accept
+				fragment2.accept.edge1 = &accept
+
+				// Step 2: Add a new fragment to the nfaStrack, from step 2.
+				nfaStack = append(nfastack, &nfaFragment{initial: &initial, accept: &accept})
 
 			case '*':
 
