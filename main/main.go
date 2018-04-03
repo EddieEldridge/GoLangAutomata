@@ -3,23 +3,10 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	".."
 )
-
-// Need to trim off \n and \r from our stringInput
-// (Thank you Cian Gannon for help)
-func TrimString(s string) string {
-
-	// If the length of the string is greater than 0
-	if len(s) > 0 {
-
-		// Remove the last two characters '\n' and '\r' from our string
-		s = s[:len(s)-2]
-	}
-
-	return s
-}
 
 // Main function
 func main() {
@@ -64,7 +51,7 @@ func main() {
 			fmt.Scan(&stringInput)
 
 			// Trim the string
-			trimmedStringInput := TrimString(stringInput)
+			trimmedStringInput := strings.TrimSuffix(stringInput, "\r\n")
 
 			// Send inputs to postMatch function
 			result = automaton.PostMatch(regXPInput, trimmedStringInput)
