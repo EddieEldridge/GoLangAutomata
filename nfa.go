@@ -116,9 +116,32 @@ func postMatch(postFixRegExp string, s string) bool {
 	// Use postRegxpToNFA function on our regular expression
 	postNFA := postRegxpToNFA(postFixRegExp)
 
-	// Pointer to our array of states
+	// Pointers to our array of states
 	currentState := []*state{}
 	nextState := []*state{}
+
+	for _, rune := range s {
+
+		// Loop through all currentStates
+		for _, c := range currentState {
+
+			// Check they are labeled by the character s
+			if c.symbol == rune {
+
+			}
+		}
+
+		// Replace currentState with nextState and clear nextState array
+		currentState, nextState = nextState, []*state{}
+	}
+
+	// After we have our currenState array set up, loop through
+	for _c, c := range currentState {
+		if c == postNFA.accept {
+			matchingStatus = true
+			break
+		}
+	}
 
 	// Return result of operation
 	return matchingStatus
