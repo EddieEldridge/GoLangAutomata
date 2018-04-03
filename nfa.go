@@ -108,6 +108,25 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 	return nfaStack[0]
 }
 
+// Helper function for our postMatch function
+func addState(stateList []*state, s *state, a *state) []*state {
+
+	// Append our list of states
+	stateList = append(stateList, s)
+
+	if s.symbol == 0 {
+
+		// Add to our stateList
+		stateList = addState(stateList, s.edge1, a)
+
+		if s.edge2 != nil {
+
+			// Add to our stateList
+			stateList = addState(stateList, s.edge1, a)
+		}
+	}
+}
+
 func postMatch(postFixRegExp string, s string) bool {
 
 	// Variable to hold the status of our match
@@ -120,6 +139,9 @@ func postMatch(postFixRegExp string, s string) bool {
 	currentState := []*state{}
 	nextState := []*state{}
 
+	// addState function
+	currentState = addState(currentState[:], postNFA.initial, postNFA.accept)
+
 	for _, rune := range s {
 
 		// Loop through all currentStates
@@ -127,7 +149,7 @@ func postMatch(postFixRegExp string, s string) bool {
 
 			// Check they are labeled by the character s
 			if c.symbol == rune {
-
+				nextState = addState(nextState[:], s.edge1, postNFA.accept)
 			}
 		}
 
