@@ -108,6 +108,15 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 	return nfaStack[0]
 }
 
+func poMatch(po string, s string) {
+
+	// Variable to hold the status of our match
+	matchingStatus := false
+
+	// Return result of operation
+	return matchingStatus
+}
+
 // Main function
 func main() {
 
