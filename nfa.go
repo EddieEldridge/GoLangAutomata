@@ -114,7 +114,7 @@ func addState(stateList []*state, s *state, a *state) []*state {
 	// Append our list of states
 	stateList = append(stateList, s)
 
-	if s.symbol == 0 {
+	if s != a && s.symbol == 0 {
 
 		// Add to our stateList
 		stateList = addState(stateList, s.edge1, a)
@@ -122,9 +122,11 @@ func addState(stateList []*state, s *state, a *state) []*state {
 		if s.edge2 != nil {
 
 			// Add to our stateList
-			stateList = addState(stateList, s.edge1, a)
+			stateList = addState(stateList, s.edge2, a)
 		}
 	}
+
+	return stateList
 }
 
 func postMatch(postFixRegExp string, s string) bool {
@@ -149,7 +151,7 @@ func postMatch(postFixRegExp string, s string) bool {
 
 			// Check they are labeled by the character s
 			if c.symbol == rune {
-				nextState = addState(nextState[:], s.edge1, postNFA.accept)
+				nextState = addState(nextState[:], c.edge1, postNFA.accept)
 			}
 		}
 
@@ -158,7 +160,7 @@ func postMatch(postFixRegExp string, s string) bool {
 	}
 
 	// After we have our currenState array set up, loop through
-	for _c, c := range currentState {
+	for _, c := range currentState {
 		if c == postNFA.accept {
 			matchingStatus = true
 			break
@@ -173,7 +175,7 @@ func postMatch(postFixRegExp string, s string) bool {
 func main() {
 
 	// Set our nfa fragment to be equal to whatever regular expression we send in to our postRegxpToNFA function
-	nfaFragment := postRegxpToNFA("ab.c*|")
+	//nfaFragment := postRegxpToNFA("ab.c*|", "cccc")
 
-	fmt.Println(nfaFragment)
+	fmt.Println(postMatch("ab.c*|", ""))
 }
