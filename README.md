@@ -12,8 +12,29 @@ string of text.
 ## Developers
 Edward Eldridge (G00337490)
 
-## Program
-The the program will be run in a command prompt interface
+## How to run the program
+This program uses the Go programming language .
+
+If you do not currently have Go installed click on the following link to download [INSTALL GO](https://golang.org/dl/)
+
+To clone the repository to your local machine, using your prefered command prompt, navigate to the folder you wish to download the files to and enter
+```
+git clone https://github.com/EddieEldridge/GoLangAutomaton
+```
+There is two ways to run this program
+1. **Build and Run**
+ Navigate to the Eliza-Chatbot folder and enter the following to compile the code 
+```
+go build main.go
+```
+This will create a .exe file in your current directory.To launch the server and run the file that is created (note, unless specified, Go will name the .exe after the name of the folder which contrains the eliza.go file. E.g. in my case, my folder is called 'main' so an .exe called 'main.exe' is created)
+```
+main.exe
+```
+2. **Run** to simply run the program in your command prompt enter the following 
+```
+go run main.go
+```  
 
 ## Design
 The program will be developed using the Go programming language, Visual Studio Code and Git.
@@ -26,6 +47,7 @@ The program will be developed using the Go programming language, Visual Studio C
 - Go
 - Visual Studio Code
 - Git
+- Cmder
 
 ## Resources
 https://en.wikipedia.org/wiki/Thompson%27s_construction (For help understanding the concepts that this project is based upon)
