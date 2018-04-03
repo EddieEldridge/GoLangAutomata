@@ -32,13 +32,16 @@ func main() {
 	fmt.Print("Please enter a regular expression: ")
 	fmt.Scan(&regXPInput)
 
-	// Debug
+	// Debug (Infix)
 	fmt.Println()
-	fmt.Println("RegExp: ", regXPInput)
-	fmt.Println()
+	fmt.Println("Infix: ", regXPInput)
 
 	// Send to ShuntingYardAlgo function
 	regXPInput = automaton.ShuntingYardAlgo(regXPInput)
+
+	// Debug (Infix)
+	fmt.Println("Postfix: ", regXPInput)
+	fmt.Println()
 
 	// Second, prompt for string to test against regualar expression
 	fmt.Print("Please enter a string: ")
