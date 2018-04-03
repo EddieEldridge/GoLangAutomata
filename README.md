@@ -23,11 +23,11 @@ git clone https://github.com/EddieEldridge/GoLangAutomaton
 ```
 There is two ways to run this program
 1. **Build and Run**
- Navigate to the Eliza-Chatbot folder and enter the following to compile the code 
+ Navigate to the GoLangAutomata\main folder and enter the following to compile the code 
 ```
 go build main.go
 ```
-This will create a .exe file in your current directory.To launch the server and run the file that is created (note, unless specified, Go will name the .exe after the name of the folder which contrains the eliza.go file. E.g. in my case, my folder is called 'main' so an .exe called 'main.exe' is created)
+This will create a .exe file in your current directory.To run the file that is created (note, unless specified, Go will name the .exe after the name of the folder which contrains the main.go file. E.g. in my case, my folder is called 'main' so an .exe called 'main.exe' is created)
 ```
 main.exe
 ```
