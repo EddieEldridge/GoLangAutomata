@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package automaton
 
 // Shunting-Yard Algorithm (https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
 func ShuntingYardAlgo(inputString string) string {
@@ -75,28 +73,4 @@ func ShuntingYardAlgo(inputString string) string {
 
 	// Return the array of Runes converted into a string
 	return string(runeArray)
-}
-
-// Main Function
-
-func printResults() {
-
-	// Print out Infix
-	// Run the algorithm on our infix and print the result as Postfix:
-
-	// ab.c*.
-	fmt.Println("Infix: ", "a.b.c*")
-	fmt.Println("Postfix: ", ShuntingYardAlgo("a.b.c*"))
-
-	// (a.(b|d))*
-	fmt.Println("Infix: ", "(a.(b|d))*")
-	fmt.Println("Postfix: ", ShuntingYardAlgo("(a.(b|d))*"))
-
-	// a.(b|d).c*
-	fmt.Println("Infix: ", "a.(b|d).c*")
-	fmt.Println("Postfix: ", ShuntingYardAlgo("a.(b|d).c*"))
-
-	// a.(b.b)+.c
-	fmt.Println("Infix: ", "a.(b.b)+.c")
-	fmt.Println("Postfix: ", ShuntingYardAlgo("a.(b.b)+.c"))
 }
