@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package automaton
 
 // Struct to store state
 type state struct {
@@ -129,7 +125,7 @@ func addState(stateList []*state, s *state, a *state) []*state {
 	return stateList
 }
 
-func postMatch(postFixRegExp string, s string) bool {
+func PostMatch(postFixRegExp string, stringToTest string) bool {
 
 	// Variable to hold the status of our match
 	matchingStatus := false
@@ -144,7 +140,7 @@ func postMatch(postFixRegExp string, s string) bool {
 	// addState function
 	currentState = addState(currentState[:], postNFA.initial, postNFA.accept)
 
-	for _, rune := range s {
+	for _, rune := range stringToTest {
 
 		// Loop through all currentStates
 		for _, c := range currentState {
@@ -169,13 +165,4 @@ func postMatch(postFixRegExp string, s string) bool {
 
 	// Return result of operation
 	return matchingStatus
-}
-
-// Main function
-func main() {
-
-	// Set our nfa fragment to be equal to whatever regular expression we send in to our postRegxpToNFA function
-	//nfaFragment := postRegxpToNFA("ab.c*|", "cccc")
-
-	fmt.Println(postMatch("ab.c*|", ""))
 }
