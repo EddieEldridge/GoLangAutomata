@@ -108,10 +108,17 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 	return nfaStack[0]
 }
 
-func poMatch(po string, s string) {
+func postMatch(postFixRegExp string, s string) bool {
 
 	// Variable to hold the status of our match
 	matchingStatus := false
+
+	// Use postRegxpToNFA function on our regular expression
+	postNFA := postRegxpToNFA(postFixRegExp)
+
+	// Pointer to our array of states
+	currentState := []*state{}
+	nextState := []*state{}
 
 	// Return result of operation
 	return matchingStatus
