@@ -39,9 +39,8 @@ go run main.go
 ## Design
 The program will be developed using the Go programming language, Visual Studio Code and Git.
 
-## Documentation
-- Github readMe
-- Github Wiki
+## Information
+For more information on concepts discussed and used in this program, please refer to the Wiki and resources below.
 
 ## Technologies
 - Go
