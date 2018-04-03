@@ -9,9 +9,6 @@ build a non-deterministic finite automaton (NFA) from a regular expression,
 and can use the NFA to check if the regular expression matches any given
 string of text.
 
-## Developers
-Edward Eldridge (G00337490)
-
 ## How to run the program
 This program uses the Go programming language .
 
@@ -54,3 +51,6 @@ https://en.wikipedia.org/wiki/Thompson%27s_construction (For help understanding 
 http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html
 
 https://swtch.com/~rsc/regexp/regexp1.html 
+
+## Developers
+Edward Eldridge (G00337490)
