@@ -26,6 +26,7 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 		// Switch statements
 		switch r {
 
+		// Where our character is '.'
 		case '.':
 
 			// Step 1: Remove 2 NFA fragments from the top of the stacks
@@ -47,6 +48,7 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 			// Step 3: Add a new fragment to the nfaStrack, from step 2.
 			nfaStack = append(nfaStack, &nfaFragment{initial: fragment1.initial, accept: fragment2.accept})
 
+		// Where our character is '|'
 		case '|':
 
 			// Step 1: Remove 2 NFA fragments from the top of the stacks
@@ -72,6 +74,7 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 			// Step 2: Add a new fragment to the nfaStrack, from step 2.
 			nfaStack = append(nfaStack, &nfaFragment{initial: &initial, accept: &accept})
 
+		// Where our character is '*'
 		case '*':
 
 			// Step 1: Remove 2 NFA fragments from the top of the stacks
@@ -90,6 +93,8 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 			// Step 2: Add a new fragment to the nfaStrack, from step 2.
 			nfaStack = append(nfaStack, &nfaFragment{initial: &initial, accept: &accept})
 
+		// Where our character is '*'
+		case '+':
 		// When the character read in is not one of the above characters in our switch statement
 		default:
 			accept := state{}
