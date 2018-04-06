@@ -40,10 +40,10 @@ The program will be developed using the Go programming language, Visual Studio C
 For more information on concepts discussed and used in this program, please refer to the Wiki and resources below.
 
 ## Technologies
-- Go
-- Visual Studio Code
-- Git
-- Cmder
+- [GO](https://golang.org/dl/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
+- [Cmder](http://cmder.net/)
 
 ## Resources
 https://en.wikipedia.org/wiki/Thompson%27s_construction (For help understanding the concepts that this project is based upon)

@@ -97,9 +97,11 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 		case '?':
 			// Step 1: Remove 2 NFA fragments from the top of the stacks
 			// Get the top element of the stack
-			frag := nfaStack[len(nfaStack)-1]
+			//frag := nfaStack[len(nfaStack)-1]
 
-			
+			// Remove the top element off the stack
+			//nfaStack = nfaStack[:len(nfaStack)-1]
+
 		case '+':
 
 			// Step 1: Remove 2 NFA fragments from the top of the stacks

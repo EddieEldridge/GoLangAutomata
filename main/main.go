@@ -55,6 +55,7 @@ func main() {
 
 			// Send inputs to postMatch function
 			result = automaton.PostMatch(regXPInput, trimmedStringInput)
+
 			// Print results
 			fmt.Println()
 			fmt.Println("Match: ", result)
