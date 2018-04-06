@@ -93,10 +93,17 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 			// Step 2: Add a new fragment to the nfaStrack, from step 2.
 			nfaStack = append(nfaStack, &nfaFragment{initial: &initial, accept: &accept})
 
-		// Where our character is '+'
+		// Where our character is '?'
+		case '?':
+			// Step 1: Remove 2 NFA fragments from the top of the stacks
+			// Get the top element of the stack
+			frag := nfaStack[len(nfaStack)-1]
+
+			
 		case '+':
 
-			// Take one fragment off the stack
+			// Step 1: Remove 2 NFA fragments from the top of the stacks
+			// Get the top element of the stack
 			frag := nfaStack[len(nfaStack)-1]
 
 			// Create a new accept state
