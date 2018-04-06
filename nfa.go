@@ -93,8 +93,24 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 			// Step 2: Add a new fragment to the nfaStrack, from step 2.
 			nfaStack = append(nfaStack, &nfaFragment{initial: &initial, accept: &accept})
 
-		// Where our character is '*'
+		// Where our character is '+'
 		case '+':
+
+			// Take one fragment off the stack
+			frag := nfaStack[len(nfaStack)-1]
+
+			// Create a new accept state
+			accept := state{}
+
+			// Set the intial state
+			initial := state{edge1: frag.initial, edge2: &accept}
+
+			// Set the accept state of edge1 of our fragment as the pointer of our intial state
+			frag.accept.edge1 = &initial
+
+			// Append stack with fragment
+			nfaStack = append(nfaStack, &nfaFragment{initial: frag.initial, accept: &accept})
+
 		// When the character read in is not one of the above characters in our switch statement
 		default:
 			accept := state{}
