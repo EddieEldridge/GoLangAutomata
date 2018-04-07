@@ -1,7 +1,16 @@
 ![golang automaton](https://user-images.githubusercontent.com/22448079/37846082-675d1ecc-2ec4-11e8-8ef1-9da26b9e3090.png)
 
-# GoLang Automaton
-A regular expression engine build in GoLang
+<p align="center">
+  <b>A regular expression engine built in the Go programming langauge</b><br>
+</p>
+
+## Contents
+* [Description](#description)
+* [How to run](#how-to-run-the-program)
+* [Design](#design)
+* [Information](#information)
+* [Technologies](#technologies)
+* [Resources](#resources)
 
 ## Description
 The aim of this project is to write a program in the Go programming language that can
