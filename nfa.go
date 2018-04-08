@@ -105,7 +105,7 @@ func PostRegXPToNFA(inputString string) *nfaFragment {
 			initial := state{edge1: frag.initial, edge2: frag.accept}
 
 			// Add to stack
-			nfaStack = append(nfaStack, &nfa{initial: &initial, accept: frag.accept})
+			nfaStack = append(nfaStack, &nfaFragment{initial: &initial, accept: frag.accept})
 
 		case '+':
 
