@@ -15,7 +15,7 @@ type nfaFragment struct {
 
 // Function to change our postfix regular expression to an NFA(Non-finite automaton)
 // Return a pointer to an NFA struct
-func postRegxpToNFA(inputString string) *nfaFragment {
+func PostRegXPToNFA(inputString string) *nfaFragment {
 
 	// Create nfa stack
 	nfaStack := []*nfaFragment{}
@@ -135,7 +135,7 @@ func postRegxpToNFA(inputString string) *nfaFragment {
 }
 
 // Helper function for our postMatch function
-func addState(stateList []*state, s *state, a *state) []*state {
+func AddState(stateList []*state, s *state, a *state) []*state {
 
 	// Append our list of states
 	stateList = append(stateList, s)
@@ -143,12 +143,12 @@ func addState(stateList []*state, s *state, a *state) []*state {
 	if s != a && s.symbol == 0 {
 
 		// Add to our stateList
-		stateList = addState(stateList, s.edge1, a)
+		stateList = AddState(stateList, s.edge1, a)
 
 		if s.edge2 != nil {
 
 			// Add to our stateList
-			stateList = addState(stateList, s.edge2, a)
+			stateList = AddState(stateList, s.edge2, a)
 		}
 	}
 
@@ -160,15 +160,15 @@ func PostMatch(postFixRegExp string, stringToTest string) bool {
 	// Variable to hold the status of our match
 	matchingStatus := false
 
-	// Use postRegxpToNFA function on our regular expression
-	postNFA := postRegxpToNFA(postFixRegExp)
+	// Use PostRegXPToNFA function on our regular expression
+	postNFA := PostRegXPToNFA(postFixRegExp)
 
 	// Pointers to our array of states
 	currentState := []*state{}
 	nextState := []*state{}
 
-	// addState function
-	currentState = addState(currentState[:], postNFA.initial, postNFA.accept)
+	// AddState function
+	currentState = AddState(currentState[:], postNFA.initial, postNFA.accept)
 
 	for _, rune := range stringToTest {
 
@@ -177,7 +177,7 @@ func PostMatch(postFixRegExp string, stringToTest string) bool {
 
 			// Check they are labeled by the character s
 			if c.symbol == rune {
-				nextState = addState(nextState[:], c.edge1, postNFA.accept)
+				nextState = AddState(nextState[:], c.edge1, postNFA.accept)
 			}
 		}
 

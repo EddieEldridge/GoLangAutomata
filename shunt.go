@@ -5,7 +5,7 @@ func ShuntingYardAlgo(inputString string) string {
 
 	// Map to that we can map characters (e.g *(),.|) to integers
 	// We choose these numbers due to the fact that certain characters have precedence over others
-	characterMap := map[rune]int{'*': 10, '.': 9, '|': 8, '+': 7}
+	characterMap := map[rune]int{'*': 10, '.': 9, '|': 8, '+': 7, '?': 6}
 
 	// Empty array of Runes (https://godoc.org/golang.org/x/text/runes)
 	runeArray := []rune{}
@@ -62,6 +62,7 @@ func ShuntingYardAlgo(inputString string) string {
 
 	}
 
+	// Wher length of our stack is greater than 0
 	for len(stack) > 0 {
 
 		// Append the top element of the stack to our runeArray

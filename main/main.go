@@ -17,6 +17,7 @@ func main() {
 	var result bool
 	var menuKeeper bool = false
 
+	// Print header
 	fmt.Println()
 	fmt.Println("===============================")
 	fmt.Println("ENTER REGXP AS 'EXIT' TO EXIT")
