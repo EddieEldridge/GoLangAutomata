@@ -56,11 +56,12 @@ For more information on concepts discussed and used in this program, please refe
 - [Cmder](http://cmder.net/)
 
 ## Resources
-https://en.wikipedia.org/wiki/Thompson%27s_construction (For help understanding the concepts that this project is based upon)
+- [Thompson's Construction](https://en.wikipedia.org/wiki/Thompson%27s_construction) (For help understanding the concepts that this project is based upon)
 
-http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html
+- [Converting a regular expression to a NFA](http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html)
 
-https://swtch.com/~rsc/regexp/regexp1.html 
+- [Russ Cox article on RegXP matching](https://swtch.com/~rsc/regexp/regexp1.html)
+
 
 ## Developers
 Edward Eldridge (G00337490)
