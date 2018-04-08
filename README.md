@@ -64,3 +64,7 @@ https://swtch.com/~rsc/regexp/regexp1.html
 
 ## Developers
 Edward Eldridge (G00337490)
+
+## Acknowledgments
+[Dr. Ian Mcloughlin](https://github.com/ianmcloughlin) - For help with the foundations of the project
+[Cian Gannon](https://github.com/cian2009) - For bringing my attention to the fact that '/r' and '/n' characters were being passed into the PostMatch function
