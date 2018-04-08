@@ -11,6 +11,7 @@
 * [Information](#information)
 * [Technologies](#technologies)
 * [Resources](#resources)
+* [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
 
 ## Description
 The aim of this project is to write a program in the Go programming language that can
@@ -46,7 +47,7 @@ go run main.go
 The program will be developed using the Go programming language, Visual Studio Code and Git.
 
 ## Information
-For more information on concepts discussed and used in this program, please refer to the Wiki and resources below.
+For more information on concepts discussed and used in this program, please refer to the [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki) and resources below.
 
 ## Technologies
 - [GO](https://golang.org/dl/)
