@@ -43,9 +43,6 @@ main.exe
 go run main.go
 ```  
 
-## Design
-The program will be developed using the Go programming language, Visual Studio Code and Git.
-
 ## Information
 For more information on concepts discussed and used in this program, please refer to the [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki) and resources below.
 
